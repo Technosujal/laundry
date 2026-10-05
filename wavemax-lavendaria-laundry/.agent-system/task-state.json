@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "lifecycle_state": "DEVELOPMENT",
+  "active_phase": "PHASE_6_WORKFORCE_POC",
+  "active_task": "three-role-workforce-poc-to-production-boundary",
+  "phase_status": "APPROVED_IN_PROGRESS",
+  "repair_attempt": 0,
+  "repair_attempt_limit": 3,
+  "last_verified_at": "2026-09-26",
+  "last_completed_repair": "archive-workforce-module-local-preview",
+  "next_permitted_action": "Visually review the archive-equivalent three-role workforce preview, then implement the authenticated workforce repository, account linking and audit-backed actions; keep prototype data local until BUG-002 is fixed"
+}

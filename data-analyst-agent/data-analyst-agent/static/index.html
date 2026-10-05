@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ATLAS Data Reader</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/batch.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span>AT</span><div><strong>ATLAS</strong><small>Independent data analyst</small></div></div>
+    <div class="policy"><i></i> Originals preserved · no silent deletion</div>
+  </header>
+  <main>
+    <section class="intro">
+      <p class="kicker">VERIFIED DATA INTAKE</p>
+      <h1>Read a dataset without changing it.</h1>
+      <p>Upload any file. ATLAS preserves the original and fingerprints it; recognized data, document, and text formats are also read into auditable rows for quality inspection.</p>
+    </section>
+
+    <section class="upload-card" id="drop-zone">
+      <input id="file-input" type="file" multiple hidden>
+      <input id="folder-input" type="file" webkitdirectory directory multiple hidden>
+      <div class="upload-icon">↑</div>
+      <h2>Add files or folders</h2>
+      <p>Drag multiple folders here, or add folders repeatedly · any file type · maximum 1 GB per file</p>
+      <div class="upload-actions"><button id="choose-file">Select files</button><button id="choose-folder" class="secondary">Select folder</button></div>
+      <small id="selected-file">Queue is empty</small>
+      <button id="analyze-queue" class="analyze-queue hidden">Analyze queued files</button>
+    </section>
+
+    <section class="processing hidden" id="processing"><span></span><div><strong>Reading every row</strong><small>The original file is being fingerprinted and preserved.</small></div></section>
+    <section class="error hidden" id="error"></section>
+
+    <section id="results" class="hidden">
+      <div class="result-head"><div><p class="kicker">ANALYSIS RESULT</p><h2 id="result-name"></h2><select id="result-selector" class="hidden" aria-label="Choose analyzed file"></select></div><span class="verified">✓ Verified process</span></div>
+      <section id="batch-summary" class="batch-summary hidden"></section>
+      <div class="metrics" id="metrics"></div>
+
+      <div class="grid">
+        <section class="card span-8">
+          <div class="card-head"><div><h3>Full row accounting</h3><p>Every source row has a recorded disposition.</p></div><span id="balance-status"></span></div>
+          <div class="equation" id="equation"></div>
+          <div class="accounting" id="accounting"></div>
+        </section>
+        <section class="card span-4">
+          <div class="card-head"><div><h3>Source integrity</h3><p>Fingerprint before and after analysis</p></div></div>
+          <dl id="source-integrity"></dl>
+        </section>
+      </div>
+
+      <section class="card section-gap">
+        <div class="card-head padded"><div><h3>Column quality</h3><p>Types, missing values, uniqueness, and detected concerns</p></div></div>
+        <div class="table-wrap"><table><thead><tr><th>Column</th><th>Type</th><th>Populated</th><th>Missing</th><th>Unique</th><th>Examples</th><th>Concerns</th></tr></thead><tbody id="columns"></tbody></table></div>
+      </section>
+
+      <div class="grid section-gap">
+        <section class="card span-5"><div class="card-head"><div><h3>Quality findings</h3><p>Rows remain retained even when a concern is found.</p></div></div><div id="issues" class="issues"></div></section>
+        <section class="card span-7"><div class="card-head"><div><h3>Source preview</h3><p>First 25 rows, including disposition</p></div></div><div class="table-wrap"><table><thead id="preview-head"></thead><tbody id="preview-body"></tbody></table></div></section>
+      </div>
+
+      <section class="card section-gap">
+        <div class="card-head padded"><div><h3>Process log</h3><p>Start, progress, checks, outputs, and completion for this analysis</p></div><span id="event-count"></span></div>
+        <div id="process-log" class="process-log"></div>
+      </section>
+
+      <section class="limitations"><strong>What this verification means</strong><p id="confidence"></p><ul id="limitations"></ul></section>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

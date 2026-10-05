@@ -1,0 +1,20 @@
+{
+  "period": {"start": "2025-01-01", "end": "2025-12-31"},
+  "tolerances": {"money_abs": "0.01", "export_min_coverage_pct": "90"},
+  "thresholds": {
+    "timesheet_max_hours": "16",
+    "void_top_customer_share_pct": "50",
+    "void_rate_pct_of_sales": "10",
+    "free_start_rate_pct_month": "10",
+    "unpaid_production_orders_max": "0",
+    "duplicate_sales_lines_max": "0"
+  },
+  "actions": {
+    "V01": "block", "V02": "block", "V03": "warn", "V04": "warn",
+    "V05": "warn", "V06": "block", "V07": "warn", "V08": "warn",
+    "V09": "warn", "V10": "warn", "V11": "warn", "V12": "log",
+    "V13": "warn", "V14": "log", "V15": "block", "V16": "log",
+    "V17": "log", "V18": "log", "V19": "warn", "V20": "warn",
+    "V21": "warn"
+  }
+}

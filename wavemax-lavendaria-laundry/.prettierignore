@@ -1,0 +1,15 @@
+node_modules
+dist
+coverage
+.mypy_cache
+.pytest-tmp
+.pytest-basetemp
+.ruff_cache
+.uv-cache
+package-lock.json
+*.md
+.agent-system
+packages/contracts/src/generated.ts
+# Generated analytics output. Formatting it would break byte-identity with the source artifact.
+data/analytics
+apps/web/public/analytics-artifact.json

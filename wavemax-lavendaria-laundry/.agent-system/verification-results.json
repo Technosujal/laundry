@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "last_run_at": "2026-09-26",
+  "phase": "PHASE_6_WORKFORCE_POC",
+  "task": "archive-workforce-module-local-preview",
+  "checks": [
+    { "name": "phase-6-api-tests", "result": "PASS", "tests": 35 },
+    { "name": "phase-6-web-tests", "result": "PASS", "tests": 102 },
+    { "name": "phase-6-typecheck", "result": "PASS" },
+    { "name": "phase-6-scoped-eslint", "result": "PASS" },
+    { "name": "phase-6-changed-file-prettier", "result": "PASS" },
+    { "name": "phase-6-build", "result": "PASS", "modules": 126 },
+    { "name": "phase-6-preview-seed-exclusion", "result": "PASS", "detail": "No workforce sample staff name, POC banner or storage key found in production web dist" },
+    { "name": "phase-6-repository-eslint", "result": "FAIL_PREEXISTING", "detail": "apps/web/src/features/analytics/AnalyticsPage.tsx:87 set-state-in-effect" },
+    { "name": "phase-6-live-clerk-and-neon", "result": "NOT_RUN_CREDENTIALS_UNAVAILABLE" },
+    { "name": "phase-6-responsive-review", "result": "NOT_RUN" },
+    { "name": "api-tests", "result": "PASS", "tests": 27 },
+    { "name": "web-tests", "result": "PASS", "tests": 88 },
+    { "name": "python-analytics-tests", "result": "PASS_WITH_FRESH_BASETEMP", "tests": 75 },
+    { "name": "workspace-typescript-typecheck", "result": "PASS" },
+    { "name": "python-typecheck-mypy-strict", "result": "PASS", "files": 27 },
+    { "name": "eslint", "result": "PASS" },
+    { "name": "ruff-lint", "result": "PASS" },
+    { "name": "prettier-format-check", "result": "PASS" },
+    { "name": "ruff-format-check", "result": "PASS" },
+    { "name": "api-and-web-production-build", "result": "PASS" },
+    {
+      "name": "workspace-local-artifact-command",
+      "result": "PASS",
+      "detail": "npm.cmd run analytics:artifact:publish succeeded from apps/web and reproduced run_id d80d5fedf9a877c4"
+    },
+    {
+      "name": "workspace-local-preview-command",
+      "result": "PASS",
+      "detail": "npm.cmd run preview started Vite in local-preview mode without a manual environment variable"
+    },
+    { "name": "contract-generation-drift", "result": "PASS_NO_DRIFT" },
+    { "name": "dependency-audit-high", "result": "PASS_ZERO_VULNERABILITIES" },
+    {
+      "name": "cross-surface-reconciliation",
+      "result": "PASS_13_OF_13",
+      "authoritative_total": "42102.22",
+      "detail": "month, week, day, weekday, hour, department, category, service type, historical order list and the workbook financial summary all sum to the same total"
+    },
+    {
+      "name": "source-separated-client-display",
+      "result": "PASS_ENFORCED_BY_TEST",
+      "detail": "WDF and LaundroPortal remain separate views; no combined revenue or misleading numeric difference is offered"
+    },
+    {
+      "name": "responsive-review",
+      "result": "PASS_HEADLESS_BROWSER",
+      "viewports": ["1440x1000", "820x1000", "390x844"],
+      "detail": "Computer-use returned no browser surface. Installed Playwright Chromium rendered the current executive revision at desktop, tablet and phone widths with zero horizontal overflow and zero console errors; desktop chart rows align exactly."
+    },
+    {
+      "name": "authorization-review",
+      "result": "PASS_MANAGER_DENIED",
+      "detail": "manager redirected from analytics, no analytics navigation, no counter-sales or store-wide workforce figure rendered"
+    },
+    { "name": "keyboard-focus-review", "result": "PASS_14_STOPS_VISIBLE_INDICATOR" },
+    {
+      "name": "service-filter-reconciliation",
+      "result": "PASS_ENFORCED_BY_TEST",
+      "detail": "The laundry-service slicer reproduces the service's published subtotal exactly"
+    },
+    {
+      "name": "analytics-direct-navigation",
+      "result": "PASS_BROWSER_AND_TEST",
+      "detail": "Business Analytics is a standard direct link; no flyout, menuitem, backdrop, connector or umbrella component remains"
+    },
+    {
+      "name": "analytics-directory-removal",
+      "result": "PASS_ENFORCED_BY_TEST",
+      "detail": "The bare analytics route renders Sales; Overview and the obsolete AnalyticsHub entry are absent"
+    },
+    { "name": "source-file-accounting", "result": "PASS", "files": 31, "detail": "Every supplied file fingerprinted and classified; every CSV/XLSX cell scanned into privacy-safe counts" },
+    { "name": "source-comparison", "result": "PASS", "periods": 365, "detail": "Python-owned day/month/year comparison with exact decimal difference" },
+    { "name": "analytics-chart-semantics", "result": "PASS_ENFORCED_BY_TEST", "detail": "comparison uses grouped bars, no relevant line chart remains, English period formatting is verified, and unrelated LaundroPortal measures have separate scales" },
+    { "name": "mature-source-colour-system", "result": "PASS_VISUAL_REVIEW", "detail": "WDF uses bright blue, LaundroPortal bright purple, and comparison views preserve the two-source mapping; semantic warnings and corrections retain distinct status colours" },
+    { "name": "chart-motion-accessibility", "result": "PASS_BROWSER_AND_COMPUTED_STYLE", "detail": "line and area entry animation duration is 1.2s normally and effectively 0.01ms under prefers-reduced-motion; below-fold panels remain paused until intersecting" },
+    { "name": "compact-owner-command-center", "result": "PASS_BROWSER_GEOMETRY", "detail": "At 1440x900 all six Owner cards render in a three-column by two-row grid without horizontal overflow" },
+    { "name": "direct-analytics-report-entry", "result": "PASS_BROWSER_AND_TEST", "detail": "The generic visible PageFrame header is absent and Sales is the only visible report heading on the Sales route" },
+    { "name": "part-to-whole-doughnuts", "result": "PASS_SHARED_PRIMITIVE", "detail": "All former MixBar consumers now receive the shared compact interactive doughnut while retaining values, percentages and optional selection callbacks" },
+    { "name": "executive-overview", "result": "SUPERSEDED", "detail": "The former Analytics Overview moved into the separate Executive Dashboard area under DEC-035" },
+    { "name": "production-web-build", "result": "PASS", "detail": "Vite built 123 modules successfully" },
+    { "name": "analytics-rail-report-index", "result": "PASS_BROWSER_AND_TEST", "detail": "Active Analytics rail exposes ten direct report links; duplicated canvas source/report navigation is absent" },
+    { "name": "collapsed-analytics-filters", "result": "PASS_BROWSER", "detail": "Filters are collapsed initially and reveal Month and Service controls on demand; active chips remain available when closed" },
+    { "name": "analytics-overview-responsive-review", "result": "SUPERSEDED", "detail": "Business Analytics no longer contains Overview; responsive coverage is recorded under separate-executive-dashboard" },
+    { "name": "overview-quarter-drilldown", "result": "SUPERSEDED", "detail": "The former Overview drilldown was removed when the compact two-source Executive Dashboard replaced it" },
+    { "name": "doughnut-size-and-motion", "result": "PASS_BROWSER_AND_COMPUTED_STYLE", "detail": "Viewport entry advances the conic reveal from 6.4 degrees to 360 degrees while opacity stays at 1; centre value and legend remain non-overlapping" },
+    { "name": "analytics-rail-filters", "result": "PASS_BROWSER", "detail": "Filter trigger is inside aside, starts collapsed and exposes Month and Service controls when opened" },
+    { "name": "separate-executive-dashboard", "result": "PASS_BROWSER_AND_TEST", "viewports": ["1440x1000", "390x844"], "detail": "Executive Dashboard is the first Workspace item; WDF POS and LaundroPortal have distinct source lanes with six subjects each, desktop charts are 470px wide, and neither viewport has horizontal overflow" },
+    { "name": "workspace-rail-order", "result": "PASS_BROWSER_AND_TEST", "detail": "Workspace order is Executive Dashboard, Business Analytics, Orders, Store Operations, Inventory; Workforce Management is under People" },
+    { "name": "audit-validator", "result": "PASS_21_OF_21_EVALUATED", "detail": "Configured checks V01 through V21 all execute; 5 pass, 16 non-blocking checks fail on the supplied evidence, zero are not evaluated, and blocking failures prevent publication" },
+    { "name": "contract-generation", "result": "PASS", "detail": "OpenAPI TypeScript bindings regenerated successfully after the DataHealth contract addition" },
+    { "name": "dependency-audit-production", "result": "PASS_ZERO_VULNERABILITIES" }
+    ,
+    {
+      "name": "owner-decision-flow-executive-dashboard",
+      "result": "PASS_BROWSER_AND_TEST",
+      "viewports": ["1440x1000", "820x1000", "390x844"],
+      "detail": "Six source-labelled KPIs, daily and monthly comparisons, explicit unavailable YoY, five business-driver visuals, deterministic owner exceptions, workforce/customer context and twelve source-specific report links render without combined revenue or generated business prose."
+    },
+    {
+      "name": "unified-analytics-navigation-and-customer-decision-view",
+      "result": "PASS_BROWSER_AND_TEST",
+      "viewports": ["1440x1000", "390x844"],
+      "detail": "One six-subject report index replaces duplicated source menus; each subject contains labelled WDF and LaundroPortal sections. Customers defaults to aligned Top 5 spend and order-frequency rankings; distributions and grouped ranked evidence stay visible while only the directory is disclosed. Both viewports have zero horizontal overflow and zero console errors; report navigation resets scroll to zero."
+    },
+    {
+      "name": "sticky-source-navigation-and-customer-grouped-detail",
+      "result": "PASS_BROWSER_AND_TEST",
+      "viewports": ["1440x1000", "390x844"],
+      "detail": "One sticky left-aligned source switcher moves between WDF POS and LaundroPortal on every subject; source headings remain static so the previous source cannot stay pinned. The active analytics rail item collapses and reopens its report index. Standalone line/area panels fill the content width and reveal left-to-right. Customer distributions and grouped sales-versus-matched-void bars remain visible while only the directory is disclosed. Zero horizontal overflow and zero console errors."
+    },
+    {
+      "name": "visualization-interaction-refinement",
+      "result": "PASS_BROWSER_AND_TEST",
+      "viewports": ["1440x1000", "390x844"],
+      "detail": "All part-to-whole charts use complete SVG ring-sector paths with stable category colours, direct percentage/value legends, segment hover/focus and 18% non-active opacity. The obsolete conic mask and 128px narrow-card SVG override were removed after they clipped rings. Operations limits departments to five and opens a monthly drill-down; standalone charts span 1092px of a 1160px main region. Source switching uses one left-aligned two-button control. Executive labels and badges fit without duplication or overflow, icons are distinct, product detail cards share row bounds, fees default to five lines with full disclosure, and no viewport has horizontal overflow or console errors."
+    },
+    {
+      "name": "plain-language-headings-and-payment-status-clarity",
+      "result": "PASS_BROWSER_AND_TEST",
+      "viewports": ["1440x1000", "390x844"],
+      "detail": "Question-style headings are absent from the reviewed Executive and Orders routes. The unmatched-production card distinguishes production value from unknown payment status. Headless Chromium reports no console errors and exact 390px document width after the monthly-source chart mobile fix."
+    },
+    {
+      "name": "refresh-safe-copy-and-large-executive-trends",
+      "result": "PASS_BROWSER_AND_TEST",
+      "viewports": ["1440x900", "1309x900", "1024x900", "390x900"],
+      "detail": "Rolling and monthly revenue reports use large 190px plots in a two-column layout; yearly coverage spans the next row. Cash sales less payouts exposes both formula inputs. Visible Partial text is absent, fixed helper definitions replace changing interpretive prose, and all viewport document widths equal their client widths. Web tests: 88. Analytics tests: 77. Production web build, scoped ESLint, scoped Prettier and Ruff pass."
+    },
+    {
+      "name": "compact-area-headers-pie-animation-and-operations-time-labels",
+      "result": "PASS_BROWSER_AND_TEST",
+      "viewports": ["1440x900", "390x900"],
+      "detail": "Orders, Store operations and Inventory have no duplicate visible canvas H1 and no horizontal overflow. Doughnut rings sweep clockwise from 0% to 100% after entering the viewport; computed stroke offset was verified at 1 before entry, between 1 and 0 during motion, and 0 after completion. Store operations renders full weekday and 12-hour time labels in the KPI and heatmap. Web tests: 89. Production build, scoped ESLint and Prettier pass."
+    },
+    {
+      "name": "elera-shared-ui-and-motion-pass",
+      "result": "PASS_BROWSER_AND_TEST",
+      "viewports": ["1440x1000", "1024x1000", "390x844"],
+      "detail": "Command Center, Executive, Sales, Orders and Operations render with the compact lime-active shell and flatter shared card system. Every document width equals its viewport and no console errors occur. Header, route, card and control motion is separate from existing graph animations; computed styles retain chart-grow-y, chart-line-reveal and chart-ring-sweep. Web tests: 89. Web typecheck and the 124-module production build pass."
+    },
+    {
+      "name": "elera-visible-navigation-and-surface-motion",
+      "result": "PASS_BROWSER_AND_TEST",
+      "detail": "A keyed 620ms route reveal replays on navigation, the active rail marker slides in, KPI cards and report surfaces enter in sequence, rows and disclosures animate, and below-fold chart panels remain paused until viewport entry. Browser measurement observed route-settle at 183ms and surface-enter at 66ms after scroll. Existing chart-grow-y, chart-line-reveal and chart-ring-sweep animations remain unchanged; no horizontal overflow or console errors occurred."
+    },
+    {
+      "name": "mature-white-shared-ui-pass",
+      "result": "PASS_BROWSER_AND_TEST",
+      "viewports": ["1440x900", "1309x900", "1024x900", "820x900", "390x900"],
+      "detail": "The real WaveMAX logo, store control, role controls, complete role-authorized module set and contextual navigation remain present. White/soft-blue tokens, WaveMAX blue navigation states, navy identity controls, quieter shared panels and larger white launch cards apply across the application. A 40-route/viewport Playwright matrix found no horizontal overflow or console errors. Web tests: 89. Web typecheck and the 124-module production build pass. Computed chart animations remain chart-grow-y, chart-line-reveal and chart-ring-sweep."
+    },
+    {
+      "name": "bright-workspace-icons-and-actions",
+      "result": "PASS_BROWSER_AND_TEST",
+      "viewports": ["1440x900", "1309x900", "1024x900", "820x900", "390x900"],
+      "detail": "Workspace action text is absent and each card uses one right-aligned arrow. Module icons use stable saturated area colors, white linework and hover/focus illumination. The WaveMAX wordmark retains a restrained halo. Command Center, Executive and Orders passed 15 browser checks without overflow or console errors. Web tests: 89. Production build, changed-file ESLint and Prettier pass."
+    },
+    {
+      "name": "bright-shared-chart-palette",
+      "result": "PASS_BROWSER_AND_TEST",
+      "viewports": ["1440x1000", "390x844"],
+      "detail": "Bars, columns, grouped columns, lines, areas, heatmaps and doughnuts use a bright stable palette while retaining the established WDF/source/category mapping. Executive, Sales, Products, Cash, Trends, Operations and Orders have no overflow or console errors. Computed animation names include chart-grow-y, chart-grow-x, chart-line-reveal, chart-area-reveal, chart-point-reveal and chart-ring-sweep. Web tests: 89. Web typecheck and the 124-module production build pass."
+    },
+    {
+      "name": "application-wide-bright-accent-system",
+      "result": "PASS_BROWSER_AND_TEST",
+      "viewports": ["1440x1000", "390x844"],
+      "detail": "Source switchers, badges, KPI accents and icons, ranking colors, information panels, filters and semantic statuses use the bright palette while neutral surfaces remain readable. Twelve routes passed both viewport checks with no horizontal overflow or console errors. Web tests: 89 with one worker; scoped ESLint, Prettier, web typecheck and the 124-module production build pass."
+    },
+    {
+      "name": "owner-latest-recorded-day-strip",
+      "result": "PASS_BROWSER_AND_TEST",
+      "viewports": ["1440x1000", "390x844"],
+      "detail": "The owner Command Center uses the analytics gateway to show WDF sales, WDF paid orders, LaundroPortal machine revenue and LaundroPortal washer cycles for one latest common calendar date. The strip explicitly says Latest recorded day and Historical; managers do not request or render it. All 91 web tests, TypeScript and production build pass. Both viewports have no overflow or console errors."
+    }
+  ],
+  "overall_result": "PASS_CURRENT_CHANGE_EXISTING_GLOBAL_LINT_DEBT_REMAINS"
+}

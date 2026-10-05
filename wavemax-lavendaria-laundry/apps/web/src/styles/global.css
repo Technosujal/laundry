@@ -1,0 +1,744 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --color-ink: #111827;
+  --color-muted: #607089;
+  --color-line: #dce4ef;
+  --color-canvas: #f6f8fb;
+  --color-brand: #2563eb;
+  --color-brand-soft: #edf4ff;
+  --color-amber-soft: #fff5d7;
+  --shadow-panel: 0 10px 28px rgba(29, 47, 78, 0.055);
+}
+
+@layer base {
+  :root {
+    min-width: 320px;
+    color: var(--color-ink);
+    background: var(--color-canvas);
+    font-family: var(--font-sans);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  html,
+  body,
+  #root {
+    min-width: 320px;
+    min-height: 100%;
+  }
+
+  body {
+    min-height: 100vh;
+    margin: 0;
+    background: var(--color-canvas);
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.app-shell {
+  --wavemax-blue: #2563eb;
+  --wavemax-blue-strong: #1748b8;
+  --wavemax-navy: #11203a;
+}
+
+/*
+ * Bright accent migration.
+ *
+ * Older reports still carry their original source/category utility names. Normalize those
+ * presentation colors here so the entire application receives the bright product palette while
+ * the underlying semantic mapping remains stable. Neutral text, white surfaces and data-status
+ * meaning are intentionally unchanged.
+ */
+[class*="text-[#355f86]"],
+[class*="text-[#294f6c]"],
+[class*="text-[#355f7d]"],
+[class*="text-[#315f88]"],
+[class*="text-[#37658e]"],
+[class*="text-[#2759c8]"] {
+  color: #2563eb !important;
+}
+
+[class*="bg-[#355f86]"],
+[class*="bg-[#294f6c]"],
+[class*="bg-[#355f7d]"],
+[class*="bg-[#315f88]"],
+[class*="bg-[#37658e]"],
+[class*="bg-[#2759c8]"] {
+  background-color: #2563eb !important;
+}
+
+[class*="border-[#afc2d0]"],
+[class*="border-[#c7d5df]"],
+[class*="border-[#bfd3fa]"],
+[class*="border-[#b8cee1]"],
+[class*="border-[#b9cad8]"] {
+  border-color: #93c5fd !important;
+}
+
+[class*="text-[#66556f]"],
+[class*="text-[#6B4E8A]"],
+[class*="text-[#6b4e8a]"],
+[class*="text-[#6e557e]"],
+[class*="text-[#5f4770]"],
+[class*="text-[#594962]"],
+[class*="text-[#504259]"],
+[class*="text-[#75647d]"],
+[class*="text-[#7f7086]"],
+[class*="text-[#8f8195]"],
+[class*="text-[#6b5b73]"],
+[class*="text-[#685a78]"] {
+  color: #7c3aed !important;
+}
+
+[class*="bg-[#66556f]"],
+[class*="bg-[#6B4E8A]"],
+[class*="bg-[#6b4e8a]"],
+[class*="bg-[#6e557e]"],
+[class*="bg-[#5f4770]"],
+[class*="bg-[#594962]"],
+[class*="bg-[#504259]"],
+[class*="bg-[#75647d]"],
+[class*="bg-[#7f7086]"],
+[class*="bg-[#8f8195]"],
+[class*="bg-[#6b5b73]"],
+[class*="bg-[#685a78]"] {
+  background-color: #7c3aed !important;
+}
+
+[class*="border-[#d6cbd9]"],
+[class*="border-[#d4cbd7]"],
+[class*="border-[#ddd0e4]"],
+[class*="border-[#b9aebd]"] {
+  border-color: #d8b4fe !important;
+}
+
+[class*="bg-[#f7f3f8]"],
+[class*="bg-[#f3eff4]"],
+[class*="bg-[#faf7fc]"],
+[class*="bg-[#f2eef4]"] {
+  background-color: #faf5ff !important;
+}
+
+[class*="text-[#49747a]"],
+[class*="text-[#4f7770]"],
+[class*="text-[#55766f]"],
+[class*="text-[#567d72]"],
+[class*="text-[#496f6a]"] {
+  color: #0d9488 !important;
+}
+
+[class*="bg-[#49747a]"],
+[class*="bg-[#4f7770]"],
+[class*="bg-[#55766f]"],
+[class*="bg-[#567d72]"],
+[class*="bg-[#496f6a]"] {
+  background-color: #0d9488 !important;
+}
+
+[class*="text-[#4f7462]"],
+[class*="text-[#315f27]"],
+[class*="text-[#1c6238]"] {
+  color: #059669 !important;
+}
+
+[class*="bg-[#4f7462]"],
+[class*="bg-[#2f9e5f]"] {
+  background-color: #10b981 !important;
+}
+
+[class*="text-[#906b45]"],
+[class*="text-[#967246]"],
+[class*="text-[#9a7b60]"],
+[class*="text-[#a47742]"],
+[class*="text-[#a67f4c]"],
+[class*="text-[#77591d]"],
+[class*="text-[#80613f]"],
+[class*="text-[#8d7252]"] {
+  color: #d97706 !important;
+}
+
+[class*="bg-[#906b45]"],
+[class*="bg-[#967246]"],
+[class*="bg-[#9a7b60]"],
+[class*="bg-[#a47742]"],
+[class*="bg-[#a67f4c]"],
+[class*="bg-[#c58a1d]"] {
+  background-color: #f59e0b !important;
+}
+
+[class*="text-[#c2410c]"],
+[class*="text-[#9a3412]"],
+[class*="text-[#B42318]"],
+[class*="text-[#b42318]"],
+[class*="text-[#ad3838]"] {
+  color: #dc2626 !important;
+}
+
+[class*="bg-[#c2410c]"],
+[class*="bg-[#9a3412]"],
+[class*="bg-[#B42318]"],
+[class*="bg-[#b42318]"],
+[class*="bg-[#ad3838]"] {
+  background-color: #ef4444 !important;
+}
+
+.app-header {
+  box-shadow: 0 1px 0 rgba(23, 26, 22, 0.045);
+  animation: header-settle 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.brand-lockup {
+  isolation: isolate;
+}
+
+.brand-lockup::before {
+  position: absolute;
+  inset: -12px -18px;
+  z-index: -1;
+  border-radius: 18px;
+  content: "";
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.2), transparent 68%);
+  opacity: 0.52;
+  filter: blur(8px);
+  transition:
+    opacity 240ms ease,
+    transform 240ms ease;
+}
+
+.brand-lockup:hover::before,
+.brand-lockup:focus-within::before {
+  opacity: 0.9;
+  transform: scale(1.06);
+}
+
+.brand-logo {
+  filter: saturate(1.18) contrast(1.04) drop-shadow(0 5px 12px rgba(37, 99, 235, 0.14));
+}
+
+.app-content {
+  min-height: calc(100vh - 64px);
+}
+
+.route-view {
+  min-width: 0;
+  animation: route-settle 380ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.app-shell button:active,
+.app-shell a:active {
+  transform: scale(0.985);
+}
+
+@keyframes header-settle {
+  from {
+    transform: translateY(-8px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes route-settle {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+    clip-path: inset(0 0 22px 0 round 16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    clip-path: inset(0 0 0 0 round 0);
+  }
+}
+
+.nav-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-item::after {
+  position: absolute;
+  top: 9px;
+  bottom: 9px;
+  left: 0;
+  width: 3px;
+  border-radius: 0 4px 4px 0;
+  content: "";
+  background: #2563eb;
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-item-active::after {
+  transform: scaleY(1);
+}
+
+.motion-card,
+.motion-panel {
+  animation: surface-enter 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.motion-panel {
+  animation-play-state: paused;
+}
+
+.motion-panel[data-chart-visible="true"] {
+  animation-play-state: running;
+}
+
+.app-content .grid > :nth-child(2) .motion-card,
+.app-content .grid > .motion-card:nth-child(2),
+.app-content .grid > :nth-child(2).motion-panel {
+  animation-delay: 70ms;
+}
+
+.app-content .grid > :nth-child(3) .motion-card,
+.app-content .grid > .motion-card:nth-child(3),
+.app-content .grid > :nth-child(3).motion-panel {
+  animation-delay: 140ms;
+}
+
+.app-content .grid > :nth-child(4) .motion-card,
+.app-content .grid > .motion-card:nth-child(4),
+.app-content .grid > :nth-child(4).motion-panel {
+  animation-delay: 210ms;
+}
+
+.app-content .grid > :nth-child(5) .motion-card,
+.app-content .grid > .motion-card:nth-child(5),
+.app-content .grid > :nth-child(5).motion-panel {
+  animation-delay: 280ms;
+}
+
+.app-content .grid > :nth-child(6) .motion-card,
+.app-content .grid > .motion-card:nth-child(6),
+.app-content .grid > :nth-child(6).motion-panel {
+  animation-delay: 350ms;
+}
+
+@keyframes surface-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.app-content tbody tr {
+  animation: row-enter 300ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.app-content tbody tr:nth-child(2) {
+  animation-delay: 35ms;
+}
+
+.app-content tbody tr:nth-child(3) {
+  animation-delay: 70ms;
+}
+
+.app-content tbody tr:nth-child(4) {
+  animation-delay: 105ms;
+}
+
+.app-content tbody tr:nth-child(5) {
+  animation-delay: 140ms;
+}
+
+.app-content tbody tr:nth-child(n + 6) {
+  animation-delay: 175ms;
+}
+
+@keyframes row-enter {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.app-content details[open] > :not(summary) {
+  animation: disclosure-enter 360ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes disclosure-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* The decorative grid bleeds past the section on both sides. Clip horizontally so it cannot
+   widen the page, while leaving vertical overflow free for card hover shadows. */
+.launch-workspace {
+  overflow-x: clip;
+}
+
+.launch-workspace::before {
+  position: absolute;
+  inset: -28px -64px auto;
+  z-index: -1;
+  height: 360px;
+  content: "";
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), transparent);
+  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+
+.launch-card::after {
+  position: absolute;
+  right: -64px;
+  bottom: -92px;
+  width: 230px;
+  height: 230px;
+  border: 1px solid rgba(37, 99, 235, 0.055);
+  border-radius: 50%;
+  content: "";
+  box-shadow: 0 0 0 30px rgba(37, 99, 235, 0.025);
+  transition: transform 360ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.launch-card {
+  animation: launch-card-enter 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.launch-workspace > div .launch-card:nth-child(2) {
+  animation-delay: 55ms;
+}
+
+.launch-workspace > div .launch-card:nth-child(3) {
+  animation-delay: 110ms;
+}
+
+.launch-workspace > div .launch-card:nth-child(4) {
+  animation-delay: 165ms;
+}
+
+.launch-workspace > div .launch-card:nth-child(5) {
+  animation-delay: 220ms;
+}
+
+.launch-workspace > div .launch-card:nth-child(6) {
+  animation-delay: 275ms;
+}
+
+@keyframes launch-card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.launch-card:hover::after {
+  transform: translate(-8px, -8px) scale(1.05);
+}
+
+.launch-cta > * {
+  display: none;
+}
+
+.launch-cta::after {
+  margin-left: auto;
+  content: "\2192";
+  font-size: 18px;
+  line-height: 1;
+  transform: translateX(0);
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.launch-card:hover .launch-cta::after,
+.launch-card:focus-visible .launch-cta::after {
+  transform: translateX(4px);
+}
+
+.launch-icon {
+  box-shadow:
+    0 3px 8px rgba(29, 47, 78, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.34);
+  transition:
+    transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 220ms ease,
+    filter 220ms ease;
+}
+
+.launch-card-selected .launch-icon,
+.launch-card:hover .launch-icon,
+.launch-card:focus-visible .launch-icon {
+  filter: saturate(1.18) brightness(1.05);
+  box-shadow:
+    0 10px 24px color-mix(in srgb, var(--glow) 36%, transparent),
+    0 0 0 5px color-mix(in srgb, var(--glow) 10%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.launch-card-selected {
+  border-color: var(--glow);
+  box-shadow: 0 16px 36px color-mix(in srgb, var(--glow) 11%, transparent);
+}
+
+.launch-card-selected strong {
+  color: var(--glow);
+}
+
+.launch-card-selected.module-card-glow::before {
+  background: radial-gradient(
+    130% 120% at 100% -12%,
+    color-mix(in srgb, var(--glow) 16%, transparent),
+    transparent 62%
+  );
+}
+
+.workspace-sidebar {
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: inset -1px 0 0 #e5eaf1;
+}
+
+.module-card-glow {
+  --glow: #355f86;
+}
+
+.module-card-glow::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: radial-gradient(
+    130% 120% at 100% -12%,
+    color-mix(in srgb, var(--glow) 10%, transparent),
+    transparent 62%
+  );
+}
+
+@keyframes rail-in {
+  from {
+    opacity: 0;
+    transform: translateX(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.rail-enter {
+  animation: rail-in 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* One-time chart entrance. These classes animate only when a chart mark mounts; filter and
+   tooltip rerenders keep the same nodes and therefore do not replay the entrance. */
+@keyframes chart-grow-y {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes chart-grow-x {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes chart-line-reveal {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes chart-area-reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes chart-point-reveal {
+  from {
+    opacity: 0;
+    transform: scale(0.45);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes chart-ring-sweep {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.chart-reveal-y {
+  transform-origin: bottom;
+  animation: chart-grow-y 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-play-state: paused;
+}
+
+.chart-reveal-x {
+  transform-origin: left;
+  animation: chart-grow-x 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-play-state: paused;
+}
+
+.chart-reveal-line {
+  stroke-dasharray: 1;
+  animation: chart-line-reveal 1200ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-play-state: paused;
+}
+
+.chart-reveal-area {
+  animation: chart-area-reveal 1200ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-play-state: paused;
+}
+
+.chart-reveal-point {
+  animation: chart-point-reveal 180ms ease-out both;
+  animation-play-state: paused;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.chart-reveal-ring-sweep {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: chart-ring-sweep 1000ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-play-state: paused;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+[data-chart-visible="true"] .chart-reveal-y,
+[data-chart-visible="true"] .chart-reveal-x,
+[data-chart-visible="true"] .chart-reveal-line,
+[data-chart-visible="true"] .chart-reveal-area {
+  animation-play-state: running;
+}
+
+[data-chart-visible="true"] .chart-reveal-point,
+[data-chart-visible="true"] .chart-reveal-ring-sweep {
+  animation-play-state: running;
+}
+
+.chart-panel {
+  container-type: inline-size;
+}
+
+/* Keep plot areas on a shared baseline when cards sit in the same dashboard row. */
+@container (min-width: 441px) {
+  .chart-panel > header {
+    min-height: 58px;
+  }
+}
+
+@container (max-width: 440px) {
+  .metric-trend-card > header > div:first-child {
+    min-height: 88px;
+  }
+
+  .mix-chart {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .chart-panel:has([role="img"]) {
+    width: 100%;
+    max-width: 760px;
+  }
+
+  [class*="grid-cols-2"] > .chart-panel:has([role="img"]) {
+    width: 100%;
+    max-width: none;
+  }
+
+  .chart-panel-wide:has([role="img"]) {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .rail-enter {
+    animation: none;
+  }
+}
+
+.empty-chart-grid {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.78), rgba(241, 245, 253, 0.95)),
+    repeating-linear-gradient(0deg, transparent 0 39px, #e0e5ef 40px);
+}
+
+.empty-chart-grid::before {
+  position: absolute;
+  top: 50%;
+  right: 28px;
+  left: 28px;
+  height: 1px;
+  content: "";
+  background: #dfe5f2;
+}
+
+.sign-in-glow {
+  background: radial-gradient(circle at 20% 25%, rgba(53, 95, 134, 0.24), transparent 34%);
+}
+
+@media (max-width: 1023px) {
+  .launch-workspace::before {
+    inset: -40px -24px auto;
+  }
+}
+
+@media (max-width: 639px) {
+  .launch-workspace::before {
+    inset: -32px -14px auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation-duration: 0.01ms !important;
+  }
+}

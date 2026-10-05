@@ -1,0 +1,47 @@
+.upload-actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.upload-card button.secondary {
+  color: var(--blue);
+  background: var(--blue-soft);
+}
+
+.upload-card .analyze-queue {
+  display: block;
+  margin: 14px auto 0;
+  background: var(--green);
+}
+
+.result-head select {
+  display: block;
+  max-width: min(520px, 85vw);
+  margin-top: 9px;
+  padding: 8px 28px 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: var(--ink);
+  background: #fff;
+}
+
+.batch-summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+  padding: 12px 15px;
+  border: 1px solid #b9dfd1;
+  border-radius: 8px;
+  color: var(--green);
+  background: var(--green-soft);
+  font-size: 11px;
+}
+
+@media (max-width: 580px) {
+  .upload-actions,
+  .batch-summary {
+    flex-direction: column;
+  }
+}

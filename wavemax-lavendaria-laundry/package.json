@@ -1,0 +1,40 @@
+{
+  "name": "wavemax-lavendaria-laundry",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npm run dev --workspace @wavemax/web",
+    "preview:web": "npm run preview --workspace @wavemax/web",
+    "dev:api": "npm run dev --workspace @wavemax/api",
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "eslint apps eslint.config.js",
+    "format:check": "prettier --check apps packages services/analytics/app services/analytics/tests eslint.config.js *.json",
+    "format": "prettier --write apps packages services/analytics/app services/analytics/tests eslint.config.js *.json",
+    "contracts:generate": "npm run generate --workspace @wavemax/contracts",
+    "analytics:test": "uv --cache-dir .uv-cache run --project services/analytics --frozen pytest services/analytics/tests",
+    "analytics:lint": "uv --cache-dir .uv-cache run --project services/analytics --frozen ruff check --no-cache services/analytics",
+    "analytics:format:check": "uv --cache-dir .uv-cache run --project services/analytics --frozen ruff format --no-cache --check services/analytics",
+    "analytics:typecheck": "uv --cache-dir .uv-cache run --project services/analytics --frozen mypy --config-file services/analytics/pyproject.toml services/analytics/app",
+    "analytics:artifact": "cd services/analytics && uv --cache-dir ../../.uv-cache run --frozen python -m app.cli build-analytics-artifact --laundro-dir \"C:\\Users\\ankus\\OneDrive\\laundry platform\\Documents\\DATA\\Laundro Portal\" --wdf-dir \"C:\\Users\\ankus\\OneDrive\\laundry platform\\Documents\\DATA\\WDF POS\" --output ../../data/analytics/analytics-artifact.json",
+    "analytics:artifact:publish": "npm run analytics:artifact && node -e \"require('fs').copyFileSync('data/analytics/analytics-artifact.json','apps/web/public/analytics-artifact.json')\""
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@eslint/js": "latest",
+    "eslint": "latest",
+    "eslint-plugin-react-hooks": "latest",
+    "globals": "latest",
+    "prettier": "latest",
+    "typescript": "latest",
+    "typescript-eslint": "latest"
+  }
+}

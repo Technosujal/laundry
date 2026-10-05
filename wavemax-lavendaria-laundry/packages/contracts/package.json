@@ -1,0 +1,16 @@
+{
+  "name": "@wavemax/contracts",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/generated.ts"
+  },
+  "scripts": {
+    "generate": "openapi-typescript openapi.yaml -o src/generated.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "openapi-typescript": "latest"
+  }
+}

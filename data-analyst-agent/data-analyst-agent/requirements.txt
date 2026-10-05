@@ -1,0 +1,14 @@
+langgraph>=0.2
+langchain>=0.3
+langchain-core>=0.3
+langchain-anthropic>=0.3
+pandas
+numpy
+scipy
+statsmodels
+scikit-learn
+duckdb
+openpyxl
+pyarrow
+pypdf>=5.0
+xlrd>=2.0

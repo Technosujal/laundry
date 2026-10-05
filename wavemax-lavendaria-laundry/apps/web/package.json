@@ -1,0 +1,36 @@
+{
+  "name": "@wavemax/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite --mode local-preview",
+    "analytics:artifact:publish": "npm run analytics:artifact:publish --prefix ../..",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc -b --pretty false",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@clerk/react": "latest",
+    "@wavemax/contracts": "^0.1.0",
+    "lucide-react": "1.45.0",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router-dom": "7.18.3",
+    "resend": "^6.32.0",
+    "xlsx": "0.18.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@vitejs/plugin-react": "latest",
+    "jsdom": "latest",
+    "tailwindcss": "^4.3.3",
+    "vite": "latest",
+    "vitest": "latest"
+  }
+}

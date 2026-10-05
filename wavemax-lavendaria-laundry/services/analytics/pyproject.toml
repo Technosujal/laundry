@@ -1,0 +1,30 @@
+[project]
+name = "wavemax-analytics"
+version = "0.1.0"
+description = "Deterministic Wavemax ingestion, data-quality, and analytics service"
+requires-python = ">=3.12"
+dependencies = ["openpyxl>=3.1,<4", "pypdf>=5.1,<6"]
+
+[dependency-groups]
+dev = ["mypy>=1.10,<2", "pytest>=8.2,<9", "ruff>=0.4,<1"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --basetemp=.pytest-basetemp"
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+packages = ["app"]
+
+[[tool.mypy.overrides]]
+module = "openpyxl.*"
+ignore_missing_imports = true
